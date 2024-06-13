@@ -1,14 +1,56 @@
-import { Viewer } from '@react-pdf-viewer/core';
+import { useState } from 'react';
+import { pdfjs, Document, Page } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+
+import type { PDFDocumentProxy } from 'pdfjs-dist';
+import { FaFileDownload } from 'react-icons/fa';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url
+).toString();
+
+const options = {
+  cMapUrl: '/cmaps/',
+  standardFontDataUrl: '/standard_fonts/',
+};
+
+const maxWidth = 800;
 
 export const CV = () => {
+  const [numPages, setNumPages] = useState<number>();
+
+  function onDocumentLoadSuccess({
+    numPages: nextNumPages,
+  }: PDFDocumentProxy): void {
+    setNumPages(nextNumPages);
+  }
+
   return (
-    <div
-      style={{
-        border: '1px solid rgba(0, 0, 0, 0.3)',
-        height: '750px',
-      }}
-    >
-      <Viewer fileUrl="../assets/cv-template.pdf" />
+    <div>
+      <a
+        href="/cv-template.pdf"
+        download
+        className="text-slate-400 font-bold py-2 inline-flex items-center gap-2"
+      >
+        <FaFileDownload className="text-slate-400" />
+        <span>Download</span>
+      </a>
+      <Document
+        file={'/cv-template.pdf'}
+        onLoadSuccess={onDocumentLoadSuccess}
+        options={options}
+        className={'pb-8'}
+      >
+        {Array.from(new Array(numPages), (_el, index) => (
+          <Page
+            key={`page_${index + 1}`}
+            pageNumber={index + 1}
+            width={maxWidth}
+          />
+        ))}
+      </Document>
     </div>
   );
 };

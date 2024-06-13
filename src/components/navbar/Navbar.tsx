@@ -8,7 +8,7 @@ export const Navbar = () => {
 
   return (
     <div className="flex flex-col">
-      <nav className="flex justify-around py-4 border-b border-slate-700 w-full fixed top-0 left-0 right-0 z-10">
+      <nav className="flex justify-around bg-slate-800/90 py-4 border-b border-slate-700 w-full fixed top-0 left-0 right-0 z-10">
         <div className="flex items-center">
           <Link to={'/'} className="cursor-pointer">
             <h3 className="text-2xl font-medium text-slate-100 hover:text-slate-400">

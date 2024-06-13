@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div className="bg-slate-800 w-full h-screen">
+    <div className="w-full h-screen">
       <div className="flex flex-col items-center justify-center mt-24">
         <RouterProvider router={router} />
       </div>
