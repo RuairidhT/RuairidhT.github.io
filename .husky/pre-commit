@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+set -x  # Enable verbose output
+npm run format
+set +x  # Disable verbose output

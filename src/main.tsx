@@ -1,10 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home.tsx';
 import { Projects } from './pages/Projects.tsx';
 import { CV } from './pages/CV.tsx';
@@ -14,41 +11,43 @@ import { Wrapper } from './components/Wrapper.tsx';
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Wrapper />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
         errorElement: <ErrorPage />,
-        id: 'Home'
+        id: 'Home',
       },
       {
-        path: "/projects",
+        path: '/projects',
         element: <Projects />,
         errorElement: <ErrorPage />,
-        id: 'Projects'
+        id: 'Projects',
       },
       {
-        path: "/certifications",
+        path: '/certifications',
         element: <Certifications />,
         errorElement: <ErrorPage />,
-        id: 'Certifications'
+        id: 'Certifications',
       },
       {
-        path: "/cv",
+        path: '/cv',
         element: <CV />,
         errorElement: <ErrorPage />,
-        id: 'CV'
+        id: 'CV',
       },
-    ]
-  }
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div className="flex flex-col items-center justify-center mt-32" x-cloak x-data="appData()" x-init="appInit()">
-      <RouterProvider router={router} />
+    <div className="bg-slate-800 w-full h-screen">
+      <div className="flex flex-col items-center justify-center mt-24">
+        <RouterProvider router={router} />
+      </div>
     </div>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
