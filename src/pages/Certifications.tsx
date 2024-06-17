@@ -12,7 +12,7 @@ export const Certifications = () => {
   certs.sort((a, b) => b.startDate.getTime() - a.startDate.getTime());
 
   return (
-    <div className="flex flex-wrap -m-4 mx-64">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 w-[70%]">
       {certs.map((cert) => {
         return <CertificationCard cert={cert} />;
       })}

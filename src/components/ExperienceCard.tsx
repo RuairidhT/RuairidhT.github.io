@@ -44,10 +44,10 @@ export const ExperienceCard = ({ experience }: Props) => {
       <p className="leading-relaxed text-base text-slate-300 w-full">
         {formattedDescription}
       </p>
-      <div className="py-4">
+      <div className="flex flex-wrap mt-4">
         {experience.skills.map((skill) => {
           return (
-            <span className="text-xs font-medium me-2 px-2.5 py-0.5 rounded bg-slate-700 text-slate-400 border border-slate-500">
+            <span className="text-xs font-medium me-2 px-2.5 py-0.5 my-0.5 rounded bg-slate-700 text-slate-400 border border-slate-500 ">
               {skill}
             </span>
           );

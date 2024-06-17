@@ -12,9 +12,9 @@ export const Home = () => {
       <p className="mx-auto mt-[40px] mb-[54px] text-[18px] font-light text-[#C5C5C5] text-center max-w-lg">
         A dedicated software engineer who graduated with a degree in Computer
         Systems. My professional journey began at a small edTech company
-        immediately after completing his education. Since then, I have
-        continually sought out opportunities to enhance his skill set and
-        actively contribute to complex software development projects.
+        immediately after completing my degree. Since then, I have continually
+        sought out opportunities to enhance his skill set and actively
+        contribute to complex software development projects.
       </p>
     </>
   );

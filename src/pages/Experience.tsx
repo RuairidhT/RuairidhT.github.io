@@ -1,3 +1,4 @@
+import { FaGithub } from 'react-icons/fa';
 import { ExperienceCard } from '../components/ExperienceCard';
 
 export type Experience = {
@@ -12,6 +13,28 @@ export type Experience = {
 export const Experience = () => {
   return (
     <>
+      <div className="flex gap-4 p-4">
+        <a
+          href="https://www.github.com/ruairidht"
+          target="_blank"
+          className="w-32 center relative inline-block select-none whitespace-nowrap rounded-lg bg-slate-700 text-slate-400 border border-slate-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none hover:bg-slate-800 cursor-pointer"
+        >
+          <div className="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+            <FaGithub size={20} />
+          </div>
+          <div className="ml-4 mt-px">Personal</div>
+        </a>
+        <a
+          href="https://www.github.com/ruairidh-bjss"
+          target="_blank"
+          className="w-32 center relative inline-block select-none whitespace-nowrap rounded-lg bg-slate-700 text-slate-400 border border-slate-500 py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none hover:bg-slate-800 cursor-pointer"
+        >
+          <div className="absolute top-2/4 left-1 h-5 w-5 -translate-y-2/4">
+            <FaGithub size={20} />
+          </div>
+          <div className="ml-4 mt-px">Work</div>
+        </a>
+      </div>
       {experiences.map((experience) => (
         <ExperienceCard experience={experience} />
       ))}
@@ -169,7 +192,7 @@ His specific responsibilities included:
     startDate: new Date(2020, 2, 2),
     endDate: new Date(2022, 4, 27),
     description: `Ruairidh was part of a team of four developers working on various projects, his responsibilities included:
-    
+
 - Migrating existing components from KnockoutJS to React
 - Designing and implementing dynamic and browser-compatible pages using Elixir Phoenix and the web stack
 - Maintaining a legacy application developed using ASP.NET C#
