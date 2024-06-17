@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home } from './pages/Home.tsx';
-import { Projects } from './pages/Projects.tsx';
+import { Experience } from './pages/Experience.tsx';
 import { CV } from './pages/CV.tsx';
 import { Certifications } from './pages/Certifications.tsx';
 import { ErrorPage } from './pages/ErrorPage.tsx';
@@ -21,10 +21,10 @@ export const router = createBrowserRouter([
         id: 'Home',
       },
       {
-        path: '/projects',
-        element: <Projects />,
+        path: '/experience',
+        element: <Experience />,
         errorElement: <ErrorPage />,
-        id: 'Projects',
+        id: 'Experience',
       },
       {
         path: '/certifications',
