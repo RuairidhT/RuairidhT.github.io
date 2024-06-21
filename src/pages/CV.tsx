@@ -30,7 +30,7 @@ export const CV = () => {
   return (
     <>
       <a
-        href="/cv-template.pdf"
+        href="/Ruairidh_Taylor_CV.pdf"
         download
         className="text-slate-400 font-bold py-2 inline-flex items-center gap-2"
       >
@@ -38,7 +38,7 @@ export const CV = () => {
         <span>Download</span>
       </a>
       <Document
-        file={'/cv-template.pdf'}
+        file={'/Ruairidh_Taylor_CV.pdf'}
         onLoadSuccess={onDocumentLoadSuccess}
         options={options}
         className={'pb-8'}
